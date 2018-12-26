@@ -1,5 +1,8 @@
 # express-form changelog
 
+## v0.12.7 (2018/12/24)
+* Added in custom function that takes request
+
 ## v0.12.6 (2016/06/30)
 * Guard against request body not inheriting from Object.prototype
 

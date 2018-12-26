@@ -1,17 +1,23 @@
-# express-form [![Build Status](https://travis-ci.org/freewil/express-form.svg?branch=master)](https://travis-ci.org/freewil/express-form)
+# express-form-request
+
+Forked from [freewil/express-form](https://github.com/freewil/express-form).
 
 Express Form provides data filtering and validation as route middleware to your Express applications.
 
+
+* Added additional custom method that allows you to pass the express request object to your custom validation method.
+
+
 ## Install
 
-`npm install express-form --save`
+`npm install express-form-request --save`
 
 ## Usage
 
 ```js
 var express = require('express'),
     bodyParser = require('body-parser'),
-    form = require('express-form'),
+    form = require('express-form-request'),
     field = form.field;
 
 var app = express();
@@ -51,12 +57,12 @@ app.listen(3000);
 
 ### Module
 
-`express-form` returns an `express` [Route Middleware](http://expressjs.com/guide.html#Route-Middleware) function.
+`express-form-request` returns an `express` [Route Middleware](http://expressjs.com/guide.html#Route-Middleware) function.
 You specify filtering and validation by passing filters and validators as
 arguments to the main module function. For example:
 
 ```js
-var form = require("express-form");
+var form = require("express-form-request");
 
 app.post('/user',
 
@@ -350,6 +356,19 @@ Use "%s" in the message to have the field name or label printed in the message:
             callback(null);
           });
         });
+
+        Or, get a handle on the raw express request object
+
+        form.field('username').custom(function(value, source, request, callback) {
+          if (!request.cookies.authorized) {
+            return callback(new Error('Not Authorized');
+          }
+          username.check(value, function(err) {
+            if (err) return callback(new Error('Invalid %s'));
+            callback(null);
+          });
+        });
+
 
 
 ### http.ServerRequest.prototype.form

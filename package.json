@@ -1,12 +1,12 @@
 {
-  "author": "Dan Dean (http://dandean.com)",
-  "name": "express-form",
+  "author": "Britton Mathews (http://backit.com)",
+  "name": "express-form-request",
   "description": "Form validation and data filtering for Express",
-  "version": "0.12.6",
-  "homepage": "http://dandean.github.com/express-form",
+  "version": "0.12.7",
+  "homepage": "http://tinynova.github.com/express-form-request",
   "repository": {
     "type": "git",
-    "url": "git://github.com/freewil/express-form.git"
+    "url": "git://github.com/TinyNova/express-form-request.git"
   },
   "contributors": [
     "Marc Harter <wavded@gmail.com>",
