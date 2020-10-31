@@ -2,7 +2,7 @@
   "author": "Britton Mathews (http://backit.com)",
   "name": "express-form-request",
   "description": "Form validation and data filtering for Express",
-  "version": "0.12.8",
+  "version": "0.12.9",
   "homepage": "http://tinynova.github.com/express-form-request",
   "repository": {
     "type": "git",
